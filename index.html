@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Dashboard</title>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <h1>Enterprise Admin Dashboard</h1>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside aria-label="Sidebar Menu">
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#users">Users Management</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    
+    <!-- Data Section with Table -->
+    <section id="overview" aria-labelledby="users-heading">
+      <h2 id="users-heading">User Management Data</h2>
+      <table>
+        <caption>Active System Users</caption>
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>USR-101</td>
+            <td>John Doe</td>
+            <td>Administrator</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>USR-102</td>
+            <td>Jane Smith</td>
+            <td>Editor</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Accessible Form Section -->
+    <section id="settings" aria-labelledby="form-heading">
+      <h2 id="form-heading">Add New User</h2>
+      <form action="/submit" method="post">
+        <fieldset>
+          <legend>User Information</legend>
+
+          <div>
+            <label for="username">Full Name:</label>
+            <input type="text" id="username" name="username" required aria-required="true" autocomplete="name">
+          </div>
+
+          <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+          </div>
+
+          <div>
+            <label for="role">Assign Role:</label>
+            <select id="role" name="role" required aria-required="true">
+              <option value="">--Select Role--</option>
+              <option value="admin">Admin</option>
+              <option value="editor">Editor</option>
+              <option value="viewer">Viewer</option>
+            </select>
+          </div>
+
+          <button type="submit">Create User</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Accessible Native Modal Dialog -->
+    <section>
+      <button type="button" onclick="document.getElementById('actionModal').showModal()">Open Notifications</button>
+
+      <dialog id="actionModal" aria-labelledby="modal-title">
+        <h2 id="modal-title">System Alert</h2>
+        <p>You have 3 unread system maintenance logs.</p>
+        <button type="button" onclick="document.getElementById('actionModal').close()">Close</button>
+      </dialog>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Enterprise Inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
